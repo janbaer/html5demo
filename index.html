@@ -32,9 +32,24 @@
         }
 
         img.logo {
-            width:512px;
-	        height:512px;
-       }
+            width:50%;
+	        height:50%;
+        }
+
+        #myVideo {
+            margin: 10;
+            background: Gray;
+            height: 100%;
+            width: 100%
+
+        }
+
+        #noCameraError {
+            color: Red;
+            font-size: 2em;
+            text-align: center;
+            display: none;
+        }
 
 
 		</style>
@@ -179,6 +194,7 @@
 
         <div data-role="content">
             <video autoplay="autoplay" id="myVideo"></video>
+            <span id="noCameraError">WebRTC is not available or supported on your platform or browser!</span>
         </div><!-- /content -->
 
         <div data-role="footer" data-position="fixed">
