@@ -1,0 +1,35 @@
+﻿CACHE MANIFEST
+
+#version 2.0 10-14-2012
+
+CACHE:
+
+#images
+images/logo.png
+
+#internal HTML documents
+index.html
+
+
+#style sheets
+css/jquery.mobile-1.2.0.min.css
+
+#style sheet images
+images/ios_icon.png
+images/ios_startup.png
+images/logo.png
+css/images/ajax-loader.gif
+css/images/icons-18-black.png
+css/images/icons-18-white.png
+
+#javascript files
+scripts/jquery.min.js
+scripts/jquery.mobile-1.2.0.min.js
+scripts/knockout-2.1.0.js
+scripts/geolocation.js
+scripts/orientation.js
+scripts/touchevents.js
+scripts/webrtc.js
+
+NETWORK:
+*

@@ -1,3 +1,5 @@
+/*global ko:true, window: true, document: true, $:true*/
+/*jslint devel: true, windows: true, vars: false */
 "use strict";
 
 (function () {
@@ -38,7 +40,7 @@
 
         $("#imgLogo").css("webkitTransform", "rotate(" + tiltLR + "deg) rotate3d(1,0,0, " + (tiltFB * -1) + "deg)");
 
-    };
+    }
 
 
     function deviceMotionHandler(eventData) {
@@ -53,7 +55,7 @@
         orientationViewModel.acceleration(rawAcceleration);
 
     }
-    
+
     $(document).bind('pageinit', function () {
         $("#deviceOrientationPage").on("pageshow", function (object) {
             if (window.DeviceOrientationEvent) {
