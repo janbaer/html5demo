@@ -25,7 +25,6 @@
     function showError(error) {
         console.log("Error: " + error.toString());
 		$("#myVideo").css("display", "none");
-		var text = $("#noCameraError").text();
-		$("#noCameraError").text(text + ": " + error.toString()); 	
+		$("#noCameraError").css("display", "block");
     }
 })();
