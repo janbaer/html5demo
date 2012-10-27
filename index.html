@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html manifest="cache.manifest">
+<!--html manifest="cache.manifest"-->
+<html>
 <head>
 	<title>HTML5 DeviceFeatures</title>
 
@@ -13,56 +14,9 @@
 	<link rel="apple-touch-startup-image" href="images/ios_startup.png" />
 
     <link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css" />
-    
-	<style>
-        #map {
-	        margin-left: 0.5em;
-	        margin-top: 0.5em;
-	        width: 95%;
-	        height: 400px;
-	        border: 1px solid #000;
-        }
+    <link rel="stylesheet" href="css/styles.css" />
 
-        div.container {
-            margin: 0; 
-            padding: 0; 
-            padding-top: 10px;
-            text-align: center;  
-                       
-        }
-
-        img.logo {
-            width:50%;
-	        height:50%;
-        }
-
-        @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-            img.logo {
-                width:75%;
-	            height:75%;
-            }       
-        }
-
-        #myVideo {
-            margin: 10;
-            background: Gray;
-            height: 100%;
-            width: 100%
-
-        }
-
-        #noCameraError {
-            color: Red;
-            font-size: 2em;
-            text-align: center;
-            display: none;
-        }
-
-
-		</style>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUV4-YgcCcTMrO5kZH9Bpxf7O39hpY5HU&sensor=true&libraries=places" type="text/javascript"></script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPU5Az6465I84bPI20yNoSnK1Wp-DYZg4&sensor=true&libraries=places"></script>
 </head>
 <body>
     <div id="mainPage" data-role="page">
@@ -71,40 +25,33 @@
 	    </div><!-- /header -->
 
 	    <div data-role="content">	
-	        <a  href="#geolocPage"  data-role="button" data-corners="true" data-shadow="true" data-iconshadow="true"
-	            data-wrapperels="span" data-theme="c" 
-	            class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c">
+	        <a  href="#geolocPage" data-role="button" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c">
 	            <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Geolocation</span></span>
 	        </a>
-	        <a  href="#deviceOrientationPage"  data-role="button" data-corners="true" data-shadow="true" data-iconshadow="true"
-	            data-wrapperels="span" data-theme="c"
-	            class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c">
+	        <a  href="#deviceOrientationPage" data-role="button"  class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c">
 	            <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">DeviceOrientation</span></span>
 	        </a>
 	        
-	        <a  href="#deviceOrientationWithImagePage"  data-role="button" data-corners="true" data-shadow="true" data-iconshadow="true"
-	            data-wrapperels="span" data-theme="c"
-	            class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c">
+	        <a  href="#deviceOrientationWithImagePage" data-role="button"  class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c">
 	            <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">DeviceOrientation with Image</span></span>
 	        </a>
 
-	        <a  href="#touchEventsPage"  data-role="button" data-corners="true" data-shadow="true" data-iconshadow="true"
-	            data-wrapperels="span" data-theme="c"
-	            class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c">
-	            <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Touch gestures</span></span>
+            <a  href="#touchEventsPage" data-role="button" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c">
+                <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Touch gestures</span></span>
+            </a>
+
+	        <a  href="#touchEventsWithHammerPage" data-role="button" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c">
+	            <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Touch gestures with Hammer.js</span></span>
 	        </a>
 
-	        <a  href="#cameraAccessPage"  data-role="button" data-corners="true" data-shadow="true" data-iconshadow="true"
-	            data-wrapperels="span" data-theme="c"
-	            class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c">
+	        <a  href="#cameraAccessPage" data-role="button" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c">
 	            <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Camera Access (iOS6 only)</span></span>
 	        </a>
             
-            <a  href="#webRTCPage"  data-role="button" data-corners="true" data-shadow="true" data-iconshadow="true"
-	            data-wrapperels="span" data-theme="c"
-	            class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c">
+            <a  href="#webRTCPage" data-role="button" class="ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c">
 	            <span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">CameraAccess with WebRTC</span></span>
 	        </a>
+
 	    </div><!-- /content -->
 
 	    <div data-role="footer" data-position="fixed">
@@ -179,6 +126,25 @@
         </div><!-- /footer -->
     </div><!-- /page -->
 
+    <div id="touchEventsWithHammerPage" data-role="page" data-add-back-btn="true">
+        <div data-role="header">
+            <h1>Feature Touch Gestures with Hammer.js</h1>
+        </div><!-- /header -->
+
+        <div data-role="content">
+            <div    id="zoom" class="zoomProps" 
+                    style="-webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);" >  
+                <div class="polaroid">             
+                    <img src="images/logo.png">
+                </div>
+            </div>      
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed">
+            <h4>&copy; 2012 by Z&uuml;hlke</h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
     <div id="cameraAccessPage" data-role="page" data-add-back-btn="true">
         <div data-role="header">
             <h1>Feature Camera Access (iOS6 only)</h1>
@@ -201,7 +167,7 @@
 
         <div data-role="content">
             <video autoplay="autoplay" id="myVideo"></video>
-            <span id="noCameraError">WebRTC is not available or supported on your platform or browser!</span>
+            <div id="noCameraError"></div>
         </div><!-- /content -->
 
         <div data-role="footer" data-position="fixed">
@@ -209,15 +175,6 @@
         </div><!-- /footer -->
     </div><!-- /page -->
 
-
-    <script type="text/javascript" src="scripts/jquery.min.js"></script>
-	<script type="text/javascript" src="scripts/jquery.mobile-1.2.0.min.js"></script>
-	<script type="text/javascript" src="scripts/knockout-2.1.0.js"></script>
-
-    <script type="text/javascript" src="scripts/geolocation.js"></script>
-    <script type="text/javascript" src="scripts/orientation.js"></script>
-    <script type="text/javascript" src="scripts/touchevents.js"></script>
-    <script type="text/javascript" src="scripts/webrtc.js"></script>
-
+    <script data-main="scripts/main.js" src="scripts/lib/require.js" ></script>
 </body>
 </html>

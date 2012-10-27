@@ -1,0 +1,57 @@
+#map {
+    margin-left: 0.5em;
+    margin-top: 0.5em;
+    width: 95%;
+    height: 400px;
+    border: 1px solid #000;
+}
+
+div.container {
+    margin: 0; 
+    padding: 0; 
+    padding-top: 10px;
+    text-align: center;  
+               
+}
+
+img.logo {
+    width:50%;
+    height:50%;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    img.logo, img.polaroid {
+        width:75%;
+        height:75%;
+    }       
+}
+
+#myVideo {
+    margin: 10;
+    background: Gray;
+    height: 100%;
+    width: 100%;
+    display: none;
+
+}
+
+#noCameraError {
+    color: Red;
+    font-size: 2em;
+    text-align: center;
+    display: block;
+}
+
+#zoom {
+
+}
+
+.zoomProps {   
+    height: 512px;
+    width: 512px;
+    position:absolute;
+}
+
+.upSky {
+    /*background: #FFFFFF;*/
+}

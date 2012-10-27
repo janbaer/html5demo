@@ -1,8 +1,6 @@
-/*global ko:true, window: true, document: true, $:true*/
-/*jslint devel: true, windows: true, vars: false */
 "use strict";
 
-(function () {
+define(["jquery", "knockout", "jqm"], function($, ko) {
     var orientationViewModel = {
         orientation: ko.observable("Horizontal"),
         tiltLR: ko.observable(0),
@@ -56,43 +54,48 @@
 
     }
 
-    $(document).bind('pageinit', function () {
-        $("#deviceOrientationPage").on("pageshow", function (object) {
-            if (window.DeviceOrientationEvent) {
-                window.addEventListener('deviceorientation', devOrientHandler, false);
-            }
+    return {
+        init: function() {
+            $("#deviceOrientationPage").on("pageshow", function (object) {
+                if (window.DeviceOrientationEvent) {
+                    window.addEventListener('deviceorientation', devOrientHandler, false);
+                }
 
-            if (window.DeviceMotionEvent) {
-                window.addEventListener('devicemotion', deviceMotionHandler, false);
-            }
+                if (window.DeviceMotionEvent) {
+                    window.addEventListener('devicemotion', deviceMotionHandler, false);
+                }
 
-            ko.applyBindings(orientationViewModel, $("#deviceOrientationPage").activeElement);
-        });
+                ko.applyBindings(orientationViewModel, $("#deviceOrientationPage").activeElement);
+            });
 
-        $("#deviceOrientationWithImagePage").on("pageshow", function (object) {
-            if (window.DeviceOrientationEvent) {
-                window.addEventListener('deviceorientation', devOrientHandler, false);
-            }
-        });
+            $("#deviceOrientationWithImagePage").on("pageshow", function (object) {
+                if (window.DeviceOrientationEvent) {
+                    window.addEventListener('deviceorientation', devOrientHandler, false);
+                }
+            });
 
 
-        $("#deviceOrientationPage").on("pagehide", function (object) {
-            if (window.DeviceOrientationEvent) {
-                window.removeEventListener('deviceorientation', devOrientHandler, false);
-            }
+            $("#deviceOrientationPage").on("pagehide", function (object) {
+                if (window.DeviceOrientationEvent) {
+                    window.removeEventListener('deviceorientation', devOrientHandler, false);
+                }
 
-            if (window.DeviceMotionEvent) {
-                window.removeEventListener('devicemotion', deviceMotionHandler, false);
-            }
-        });
+                if (window.DeviceMotionEvent) {
+                    window.removeEventListener('devicemotion', deviceMotionHandler, false);
+                }
+            });
 
-        $("#deviceOrientationWithImagePage").on("pagehide", function (object) {
-            if (window.DeviceOrientationEvent) {
-                window.removeEventListener('deviceorientation', devOrientHandler, false);
-            }
-        });
-    });
-})();
+            $("#deviceOrientationWithImagePage").on("pagehide", function (object) {
+                if (window.DeviceOrientationEvent) {
+                    window.removeEventListener('deviceorientation', devOrientHandler, false);
+                }
+            });         
+        }
+
+    }
+
+
+});
 
 
 

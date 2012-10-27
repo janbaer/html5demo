@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-(function () {
+define(["jquery", "jqm"], function($) {
     function showMap(location) {
    
         // Create a new map centered on current location
@@ -31,12 +31,16 @@
         }
     };
 
+   
 
-    $(document).bind('pageinit', function() {
-        $("#geolocPage").on("pageshow", function (object) {
-            showLocation();
-        });
-    });
-})();
+    return {
+        init: function() {
+            $("#geolocPage").on("pageshow", function (object) {
+                showLocation();
+            });
+        }
+    }
+});
+
 
 
