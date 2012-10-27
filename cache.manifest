@@ -4,31 +4,33 @@
 
 CACHE:
 
-#images
-images/logo.png
-
-#internal HTML documents
+#HTML documents
 index.html
 
-
-#style sheets
-css/jquery.mobile-1.2.0.min.css
-
-#style sheet images
+#images
+images/logo.png
 images/ios_icon.png
 images/ios_startup.png
-images/logo.png
+
+#stylesheets
+css/jquery.mobile-1.2.0.min.css
+css/styles.css
+
+#stylesheet images
 css/images/ajax-loader.gif
 css/images/icons-18-black.png
 css/images/icons-18-white.png
 
 #javascript files
-scripts/jquery.min.js
-scripts/jquery.mobile-1.2.0.min.js
-scripts/knockout-2.1.0.js
+scripts/lib/query.min.js
+scripts/lib/jquery.mobile-1.2.0.min.js
+scripts/lib/knockout-2.1.0.js
+scripts/lib/hammer.js
+scripts/lib/jquery.hammer.js
 scripts/geolocation.js
 scripts/orientation.js
 scripts/touchevents.js
+scripts/touchwithhammer.js
 scripts/webrtc.js
 
 NETWORK:
