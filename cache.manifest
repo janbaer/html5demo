@@ -1,6 +1,6 @@
 ﻿CACHE MANIFEST
 
-#version 2.2 10-15-2012
+#version 2.3 10-15-2012
 
 CACHE:
 
@@ -22,7 +22,7 @@ css/images/icons-18-black.png
 css/images/icons-18-white.png
 
 #javascript files
-scripts/lib/query.min.js
+scripts/lib/jquery.min.js
 scripts/lib/jquery.mobile-1.2.0.min.js
 scripts/lib/knockout-2.1.0.js
 scripts/lib/hammer.js
